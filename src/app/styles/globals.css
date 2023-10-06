@@ -1,0 +1,123 @@
+:root {
+  /* colors */
+  --white-100: #ffffff;
+  --white-200: #D9D9D9;
+
+  --black-100: #000000;
+  --black-200: rgba(0, 0, 0, 0.3);
+
+  /* fonts */
+  --font-base: 'Poppins';
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.character {
+  height: 100vh;
+}
+.characters::after {
+  content: ""; 
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-height: 100vh;
+  width: 80vw;
+
+  background: linear-gradient(-233deg, #000 40%, rgba(0, 0, 0, 0) 65%) no-repeat;
+}
+main .character.active {
+  display: block;
+}
+
+main .character .imagem {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.content {
+  position: absolute;
+  top: 0;
+  left: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  max-width: 380px;
+  z-index: 1;
+}
+
+.content .nome-character {
+  color: var(--white-100);
+  font-size: 48px;
+  font-family: var(--font-base);
+  margin-bottom: 20px;
+  font-weight: bold;
+  width: 600px;
+}
+
+.content {
+  color: var(--white-100);
+  font-family: var(--font-base);
+  line-height: 24px;
+}
+.description {
+  color: var(--white-100);
+  font-family: var(--font-base);
+  line-height: 24px;
+  text-align: justify;
+}
+.content .logo {
+  background-image: url("./../../../public/images/logo.png");
+  background-size: cover;
+  height: 100px;
+  width: 230px;
+  margin-bottom: 35px;
+}
+
+.buttons {
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 180px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--black-200);
+}
+
+.buttons .button {
+  border: none;
+  background: var(--black-100);
+  cursor: pointer;  
+  border-radius: 50%; 
+}
+
+.button:hover{
+  -webkit-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  transform: scale(0.9);
+  transition: 1s ease;
+}
+
+.buttons .button.active {
+  transform: scale(1.2);
+  box-shadow: 0 0 10px var(--white-200);
+}
